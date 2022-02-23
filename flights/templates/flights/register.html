@@ -1,0 +1,12 @@
+{% extends "flights/base.html" %}
+{% block body %}
+<h1 style="color:red; text-align: center;">Register</h1>
+<form action="{% url 'register' %}" method="post" style="text-align: center;">
+
+    {% csrf_token %}
+    <input style="margin-left:620px" class="navbar navbar-expand-md navbar-light bg-light border" name="username" type="text" placeholder="Username" ><br><br>
+    <input style="margin-left:620px" class="navbar navbar-expand-md navbar-light bg-light border" name="password" type="password" placeholder="Password"><br><br>
+    <input style="margin-left:620px" class="navbar navbar-expand-md navbar-light bg-light border" name="password" type="password" placeholder="Confirm password"><br><br>
+    <input class="btn btn-primary" type="submit" value="Register"><br><br>
+</form>
+{% endblock %}

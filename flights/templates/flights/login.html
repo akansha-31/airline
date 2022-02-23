@@ -1,0 +1,17 @@
+{% extends "flights/base.html" %}
+{% block body %}
+<h1 style="color:red; text-align: center;">Login</h1>
+{% if message %}
+    <div>
+        {{ message }}
+    </div>
+{% endif %}
+
+<form action="{% url 'login' %}" method="post" style="text-align: center;">
+    {% csrf_token %}
+    
+    <input class="navbar navbar-expand-md navbar-light bg-light border" name="username" type="text" placeholder="Username" style="margin-left: 620px;"><br><br>
+    <input class="navbar navbar-expand-md navbar-light bg-light border" name="password" type="password" placeholder="Password" style="margin-left: 620px;"><br><br>
+    <input class="btn btn-primary" type="submit" value="Login"><br><br>
+</form>
+{% endblock %}

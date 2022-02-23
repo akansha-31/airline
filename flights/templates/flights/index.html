@@ -1,0 +1,25 @@
+{% extends "flights/base.html" %}
+{% block title %}
+    Flights
+{% endblock %}
+{% block body %}
+    <div style="text-align: right;">
+        <a href="{% url 'logout' %}">Logout</a>
+        <a href="{% url 'profile' %}">Profile</a>
+    </div>
+    <h1>Social Network</h1>
+    <div class="row">
+        {% for flight in flights %}
+        <div class="col">
+            <div class="card" style="width: 20rem;">
+                <img src="https://media.cntraveler.com/photos/5be477cf2e350417aea9dc08/master/w_1600%2Cc_limit/CNT_Intel_Plane_taking_off_TM-Detwiler_110718.jpg" class="card-img-top" alt="Flight">
+                <div class="card-body">
+                  <h5 class="card-title">Flight {{flight}}</h5>
+                  <p class="card-text">Click to see details of the flight</p>
+                  <a href="{% url 'flight' flight.id %}" class="btn btn-primary">See Flight Details</a>
+                </div>
+              </div>
+        </div>
+        {% endfor %}   
+    </div>
+{% endblock %}
